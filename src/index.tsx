@@ -32,8 +32,10 @@ type BindPropsSelector<TValue> =
   | SelectorArray<TValue>
   | keyof TValue;
 
+type ProviderProps<TValue> = { children: ReactNode, value?: TValue }
+
 interface Store<TValue, TEvent, TParams> {
-  Provider: React.ComponentType<{ children: ReactNode }>;
+  Provider: React.ComponentType<ProviderProps<TValue>>;
   hooks: {
     useEmitEvent: () => EmitEvent<TEvent, TParams>;
   };
@@ -66,8 +68,8 @@ export function createStore<
     return reduce(state, event.params);
   }
 
-  function Provider({ children }: { children: ReactNode }) {
-    const [state, dispatch] = useReducer(reducer, undefined, init);
+  function Provider({ children, value }: ProviderProps<TValue>) {
+    const [state, dispatch] = useReducer(reducer, value, init);
     const emitter = useCallback<EmitEvent<TEvent, TParams>>((event, params) => {
       dispatch({
         type: event,
