@@ -6,6 +6,7 @@
 
 - Simple and minimalistic API
 - Context-based state management
+- Concurrent safe — Utilizes React state primitives. No external stores.
 - Optimized rendering with memoization
 - Easy-to-extend functionality with custom reducers
 - Compatible with React hooks and functional components
