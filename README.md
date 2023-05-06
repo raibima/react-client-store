@@ -5,11 +5,11 @@
 ## Features
 
 - Simple and minimalistic API
-- Context-based state management
-- Concurrent safe — Utilizes React state primitives. No external stores.
+- Concurrent safe — utilizes React state primitives
+- Zero external stores
+- SSR, SSG, RSC friendly
 - Optimized rendering with memoization
-- Easy-to-extend functionality with custom reducers
-- Compatible with React hooks and functional components
+- 100% conformance to React rules. No internal hacks, nor skipping hook dependencies.
 
 ## Installation
 
