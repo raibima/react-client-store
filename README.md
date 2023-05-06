@@ -28,16 +28,16 @@ First, create a store with the initial state and the reducers:
 ```javascript
 import { createStore } from 'react-client-store';
 
-const initialState = {
+const init = () => ({
   count: 0,
-};
+});
 
 const reducers = {
-  increment: (state, params) => ({ ...state, count: state.count + params }),
-  decrement: (state, params) => ({ ...state, count: state.count - params }),
+  increment: (state, params) => ({ ...state, count: state.count + 1 }),
+  decrement: (state, params) => ({ ...state, count: state.count - 1 }),
 };
 
-const store = createStore(initialState, reducers);
+const store = createStore(init, reducers);
 ```
 
 ### 2. Use the Provider
@@ -70,8 +70,8 @@ import { store } from './store';
 function Counter() {
   const emitEvent = store.hooks.useEmitEvent();
 
-  const increment = () => emitEvent('increment', 1);
-  const decrement = () => emitEvent('decrement', 1);
+  const increment = () => emitEvent('increment');
+  const decrement = () => emitEvent('decrement');
 
   return (
     <div>
@@ -103,7 +103,7 @@ export default store.bindProps(Display, 'count');
 
 ### createStore(init, reducers)
 
-- `init`: An object representing the initial state of your store.
+- `init`: A function that returns the initial state of your store.
 - `reducers`: An object containing reducer functions for handling actions.
 
 Returns an object containing the `Provider`, hooks, and `bindProps` function.
