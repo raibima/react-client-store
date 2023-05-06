@@ -1,9 +1,15 @@
 {
   "name": "react-client-store",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "",
   "source": "src/index.js",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build"
