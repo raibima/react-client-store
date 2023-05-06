@@ -46,7 +46,7 @@ Wrap your application with the store's `Provider` component:
 
 ```javascript
 import React from 'react';
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { store } from './store';
 
 import App from './App';
