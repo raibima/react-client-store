@@ -7,5 +7,5 @@ export default function Home() {
       <h1>Counter App</h1>
       <Counter />
     </StoreProvider>
-  )
+  );
 }

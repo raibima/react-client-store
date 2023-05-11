@@ -26,15 +26,15 @@ npm install react-client-store
 First, create a store with the initial state and the reducers:
 
 ```javascript
-import { createStore } from 'react-client-store';
+import {createStore} from 'react-client-store';
 
 const init = () => ({
   count: 0,
 });
 
 const reducers = {
-  increment: (state, params) => ({ ...state, count: state.count + 1 }),
-  decrement: (state, params) => ({ ...state, count: state.count - 1 }),
+  increment: (state, params) => ({...state, count: state.count + 1}),
+  decrement: (state, params) => ({...state, count: state.count - 1}),
 };
 
 const store = createStore(init, reducers);
@@ -46,8 +46,8 @@ Wrap your application with the store's `Provider` component:
 
 ```javascript
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { store } from './store';
+import {createRoot} from 'react-dom/client';
+import {store} from './store';
 
 import App from './App';
 
@@ -55,7 +55,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(
   <store.Provider>
     <App />
-  </store.Provider>
+  </store.Provider>,
 );
 ```
 
@@ -65,7 +65,7 @@ In your components, use the `useEmitEvent` hook to dispatch actions:
 
 ```javascript
 import React from 'react';
-import { store } from './store';
+import {store} from './store';
 
 function Counter() {
   const emitEvent = store.hooks.useEmitEvent();
@@ -90,9 +90,9 @@ Use the `bindProps` function to connect your components to the store:
 
 ```javascript
 import React from 'react';
-import { store } from './store';
+import {store} from './store';
 
-function Display({ count }) {
+function Display({count}) {
   return <div>{count}</div>;
 }
 
