@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
+import {StoreProvider} from './store';
 import Counter from './Counter';
-import { StoreProvider } from './store';
+import {Suspense} from 'react';
 
 async function getInitialState() {
   await new Promise((resolve) => setTimeout(resolve, 3000));

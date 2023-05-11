@@ -1,6 +1,6 @@
 'use client';
 
-import { bindProps, useEmitEvent } from './store';
+import {bindProps, useEmitEvent} from './store';
 
 function Counter({count}: {count: number}) {
   const emitEvent = useEmitEvent();
